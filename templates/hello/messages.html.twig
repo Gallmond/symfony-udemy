@@ -12,6 +12,7 @@
 
     {% for key,message in messages %}
         <div>
+            <a href="{{ path('messages', {id: key}) }}">link</a>
             <p>key: {{ key }} message: {{ message }}</p>
         </div>
     {% endfor %}

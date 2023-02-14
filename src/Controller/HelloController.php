@@ -37,7 +37,7 @@ class HelloController extends AbstractController
         ]);
     }
 
-    #[Route('/messages/{id<\d+>?0}')]
+    #[Route('/messages/{id<\d+>?0}', name: 'messages')]
     public function messages(int $id): Response
     {
         return $this->render('hello/messages.html.twig', [
