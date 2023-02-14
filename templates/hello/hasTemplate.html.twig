@@ -1,10 +1,10 @@
-<html>
-<body>
-<div>
-    <h1>hasTemplate.html.twig</h1>
-</div>
-<div>
-    <p>param: {{ id }}</p>
-</div>
-</body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        <h1>hasTemplate.html.twig</h1>
+    </div>
+    <div>
+        <p>param: {{ id }}</p>
+    </div>
+{% endblock %}

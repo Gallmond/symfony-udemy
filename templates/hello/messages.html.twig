@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        <h1>messages.html.twig</h1>
+    </div>
+    {% if message %}
+        <div>
+            <p>Selected message: {{ message }}</p>
+        </div>
+    {% endif %}
+
+    {% for key,message in messages %}
+        <div>
+            <p>key: {{ key }} message: {{ message }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

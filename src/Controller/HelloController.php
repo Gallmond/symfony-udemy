@@ -11,6 +11,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class HelloController extends AbstractController
 {
 
+    private array $messages = [
+        'foo', 'bar', 'fizz', 'buzz'
+    ];
+
     #[Route('/', name: 'index')]
     public function index(): Response
     {
@@ -28,8 +32,17 @@ class HelloController extends AbstractController
     #[Route('/hasTemplate/{id<\d+>?1}', name: 'hasTemplate')]
     public function hasTemplate(int $id): Response
     {
-        $this->render('hello/hasTemplate.html.twig', [
+        return $this->render('hello/hasTemplate.html.twig', [
             'id' => $id
+        ]);
+    }
+
+    #[Route('/messages/{id<\d+>?0}')]
+    public function messages(int $id): Response
+    {
+        return $this->render('hello/messages.html.twig', [
+            'messages' => $this->messages,
+            'message' => $this->messages[ $id ] ?? null
         ]);
     }
 
